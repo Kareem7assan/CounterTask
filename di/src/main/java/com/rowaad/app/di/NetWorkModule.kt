@@ -1,5 +1,6 @@
 package com.rowaad.app.di
 
+import android.content.Context
 import android.util.Base64
 import android.util.Log
 import com.google.gson.GsonBuilder
@@ -7,6 +8,7 @@ import com.rowaad.app.data.remote.TweetApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import oauth.signpost.OAuthConsumer
 import oauth.signpost.basic.DefaultOAuthConsumer
@@ -30,14 +32,7 @@ import javax.crypto.spec.SecretKeySpec
 @InstallIn(SingletonComponent::class)
 object NetWorkModule {
 
-    private const val CONSUMER_KEY = "vrwTgdFKGTeVgFN2vLWwEt2xz"
-    private const val CONSUMER_SECRET = "XqDYjOCEQqvtS71E0QUF3W5sVNpiwcOiel8SgunnF47WYEap2e"
-    private const val TOKEN = "1762996038737047552-Cmbmcd9cX8HvaklxvPrcXSRhzFsegW"
-    private const val TOKEN_SECRET = "CdGyLGZhCJzOiRhfNlkiko9jgEF6HHye3tceKEO4uKUkJ"
 
-    private val consumer: OAuthConsumer = DefaultOAuthConsumer(CONSUMER_KEY, CONSUMER_SECRET).apply {
-        setTokenWithSecret(TOKEN, TOKEN_SECRET)
-    }
 
 
     @Provides
@@ -47,7 +42,17 @@ object NetWorkModule {
     }
 
     @Provides
-    fun provideOkHttpClient(loggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
+    fun provideOkHttpClient(loggingInterceptor: HttpLoggingInterceptor
+    ): OkHttpClient {
+
+        val consumerKey = BuildConfig.TWITTER_CONSUMER_KEY
+        val consumerSecret = BuildConfig.TWITTER_CONSUMER_SECRET
+        val token = BuildConfig.TWITTER_TOKEN
+        val tokenSecret = BuildConfig.TWITTER_TOKEN_SECRET
+         val consumer: OAuthConsumer = DefaultOAuthConsumer(consumerKey, consumerSecret).apply {
+            setTokenWithSecret(token, tokenSecret)
+        }
+
         val okHttpClient = OkHttpClient.Builder()
             .callTimeout(60, TimeUnit.SECONDS)
             .connectTimeout(60, TimeUnit.SECONDS)

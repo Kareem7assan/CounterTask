@@ -47,6 +47,10 @@ android {
     }
 
 }
+// Function to load properties from gradle.properties file
+fun getProperty(key: String): String {
+    return project.findProperty(key) as String
+}
 
 dependencies {
 
