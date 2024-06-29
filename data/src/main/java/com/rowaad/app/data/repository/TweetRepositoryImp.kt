@@ -1,5 +1,6 @@
 package com.rowaad.app.data.repository
 
+import com.rowaad.app.data.model.TweetPost
 import com.rowaad.app.data.remote.TweetApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -14,7 +15,7 @@ class TweetRepositoryImp @Inject constructor(
 
     override fun postTweet(text: String): Flow<Response<Any>> {
         return flow {
-            emit(api.postTweet(tweet = text))
+            emit(api.postTweet(tweet = TweetPost(text = text)))
         }
     }
 
