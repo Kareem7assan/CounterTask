@@ -1,0 +1,229 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/twitter_character_count"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginBottom="16dp"
+        />
+
+    <!-- Twitter Logo -->
+    <ImageView
+        android:id="@+id/twitterLogo"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_twitter_2"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:contentDescription="twitter_logo" />
+
+    <!-- Characters Typed Container -->
+    <LinearLayout
+        android:id="@+id/charactersTypedContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:minHeight="108dp"
+        android:background="@drawable/rect_shape_stroke_light_blue"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toBottomOf="@id/twitterLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/charactersRemainingContainer"
+        app:layout_constraintHorizontal_chainStyle="spread">
+
+        <TextView
+            android:id="@+id/charactersTypedLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="35dp"
+            android:text="@string/characters_typed"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:background="@drawable/half_rect_shape_solid_light_blue"
+            android:textColor="@android:color/black"
+            />
+
+        <TextView
+            android:id="@+id/tvCharactersTypedCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0/280"
+            android:layout_gravity="center"
+            android:textSize="26sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="12dp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+    <!-- Characters Remaining Container -->
+    <LinearLayout
+        android:id="@+id/charactersRemainingContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:minHeight="108dp"
+        android:background="@drawable/rect_shape_stroke_light_blue"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/twitterLogo"
+        app:layout_constraintStart_toEndOf="@id/charactersTypedContainer"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/charactersRemainingLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/characters_remaining"
+            android:textSize="14sp"
+            android:minHeight="35dp"
+            android:gravity="center"
+            android:background="@drawable/half_rect_shape_solid_light_blue"
+            android:textColor="@android:color/black"
+            />
+
+        <TextView
+            android:id="@+id/tvCharactersRemainingCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="280"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:textSize="26sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+<!--
+    <EditText
+        android:id="@+id/tweetEditText"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:elevation="8dp"
+        android:hint="Start typing! You can enter up to 280 characters"
+        android:background="@drawable/edittext_background"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/charactersTypedContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        />
+-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tweetInputLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/charactersTypedContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:background="@drawable/edittext_background"
+        android:backgroundTint="@null"
+        android:minHeight="239dp"
+        android:textColorHint="#5E6160"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeWidth="0.5dp"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxStrokeColor="#EDEDED"
+        android:elevation="1dp"
+
+        app:boxStrokeWidthFocused="12dp"
+        app:hintEnabled="false">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTweet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="start"
+            android:minHeight="239dp"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:minLines="5"
+            android:hint="Start typing! You can enter up to 280 characters"
+            android:textAlignment="viewStart"
+            android:textSize="12sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!-- Copy Text Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/copyTextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="#00A970"
+        android:text="Copy Text"
+        android:textSize="12sp"
+        android:alpha="0.5"
+        android:enabled="false"
+        android:singleLine="true"
+        android:layout_marginStart="16dp"
+        app:cornerRadius="@dimen/app_corner_radius"
+        app:layout_constraintTop_toBottomOf="@id/tweetInputLay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"/>
+
+    <!-- Clear Text Button -->
+    <Button
+        android:id="@+id/clearTextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="12sp"
+        android:alpha="0.5"
+        android:enabled="false"
+        android:singleLine="true"
+        app:cornerRadius="@dimen/app_corner_radius"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:text="@string/clear_text"
+        app:layout_constraintTop_toBottomOf="@id/tweetInputLay"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <!-- Post Tweet Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/postTweetButton"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#03A9F4"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/app_corner_radius"
+        android:text="@string/post_tweet"
+        app:layout_constraintTop_toBottomOf="@id/copyTextButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

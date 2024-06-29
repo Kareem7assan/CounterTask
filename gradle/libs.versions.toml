@@ -1,0 +1,107 @@
+[versions]
+agp = "8.4.2"
+kotlin = "1.9.20"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+coreKtxVersion = "1.13.1"
+kotlinJunitVersion = "1.8.0"
+constraintVersion = "2.1.4"
+hiltDagger = "2.49"
+googleServices = "4.4.2"
+crashLytics = "3.0.2"
+paletteKtxVersion = "1.0.0"
+sageArgs = "2.7.7"
+kapt = "1.9.0"
+retrofit = "2.9.0"
+okHttp3 = "4.9.1"
+core-ktx = "1.13.1"
+pref-ktx = "1.2.1"
+activity-ktx-version = "1.9.0"
+fragment-ktx-version = "1.8.1"
+picassoVersion = "2.71828"
+glideVersion="4.15.1"
+glideVersionCompiler="4.12.0"
+coroutines = "1.7.3"
+lifecycle="2.8.2"
+
+signpostCoreVersion = "1.2.1.2"
+testRules="1.6.1"
+hamCrestVersion="1.3"
+roboElectricVersion="4.7.3"
+mockito = "5.3.1"
+archTestVersion = "2.2.0"
+truthVersion = "1.1.2"
+mockkVersion = "1.12.3"
+turbineVersion = "0.13.0"
+mockitoInlineVersion = "5.2.0"
+testCoroutineVersion = "1.7.3"
+uiAutomatorVersion = "2.3.0"
+activityVersion = "1.9.0"
+navigation = "2.5.3"
+
+[libraries]
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtxVersion" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintVersion" }
+
+coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+lifecycle-android = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltDagger" }
+hilt-android-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hiltDagger" }
+
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+activity-ktx-pref = { group = "androidx.preference", name = "preference-ktx", version.ref = "pref-ktx" }
+activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity-ktx-version" }
+fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragment-ktx-version" }
+
+
+retrofit={group="com.squareup.retrofit2", name="retrofit",version.ref="retrofit"}
+gson={group="com.squareup.retrofit2", name="converter-gson",version.ref="retrofit"}
+okHttp={group="com.squareup.okhttp3", name="logging-interceptor",version.ref="okHttp3"}
+okHttp-url={group="com.squareup.okhttp3", name="okhttp-urlconnection",version.ref="okHttp3"}
+okHttp-bom={group="com.squareup.okhttp3", name="okhttp-bom",version.ref="okHttp3"}
+
+signpost-commonshttp4 = { module = "oauth.signpost:signpost-commonshttp4", version.ref = "signpostCoreVersion" }
+signpost-core = { module = "oauth.signpost:signpost-core", version.ref = "signpostCoreVersion" }
+test-rules = { group = "androidx.test", name = "rules", version.ref = "testRules" }
+ham-crest = { group = "org.hamcrest", name = "hamcrest-library", version.ref = "hamCrestVersion" }
+kotlin-junit = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit", version.ref = "kotlinJunitVersion" }
+
+ui-automator = { group = "androidx.test.uiautomator", name = "uiautomator", version.ref = "uiAutomatorVersion" }
+mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito" }
+mockito-kotlin = { group = "org.mockito.kotlin", name = "mockito-kotlin", version.ref = "mockito" }
+mockito-inline = { group = "org.mockito", name = "mockito-inline", version.ref = "mockitoInlineVersion" }
+arch-test = { group = "androidx.arch.core", name = "core-testing", version.ref = "archTestVersion" }
+truth-test = { group = "com.google.truth", name = "truth", version.ref = "truthVersion" }
+turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbineVersion" }
+robo-electric = { group = "org.robolectric", name = "robolectric", version.ref = "roboElectricVersion" }
+robo-electric-shadow = { group = "org.robolectric", name = "shadows-framework", version.ref = "roboElectricVersion" }
+coroutine-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "testCoroutineVersion" }
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockkVersion" }
+mockk-android = { group = "io.mockk", name = "mockk-android", version.ref = "mockkVersion" }
+mockk-agent = { group = "io.mockk", name = "mockk-agent", version.ref = "mockkVersion" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activityVersion" }
+
+fragment-navigation={ group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
+ui-navigation={ group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
+runtime-navigation={ group = "androidx.navigation", name = "navigation-runtime-ktx", version.ref = "navigation" }
+
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+android-library-agp= { id = "com.android.library", version.ref = "agp" }
+safeargs-plugin= { id = "androidx.navigation.safeargs.kotlin", version.ref = "sageArgs" }
+hilt-plugin= { id = "com.google.dagger.hilt.android", version.ref = "hiltDagger" }
+kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kapt" }
+

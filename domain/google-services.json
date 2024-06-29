@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "372465379986",
+    "project_id": "vita-care-5e7c8",
+    "storage_bucket": "vita-care-5e7c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372465379986:android:4aad2adb15d384d5e0944b",
+        "android_client_info": {
+          "package_name": "com.rowaad.app.domain"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNE92jvYITkMVcNdMlmO09YrykWIwcqJ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372465379986:android:67e6f2decd98c763e0944b",
+        "android_client_info": {
+          "package_name": "com.rowaad.vita"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNE92jvYITkMVcNdMlmO09YrykWIwcqJ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
